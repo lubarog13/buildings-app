@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "predeploy": "yarn build",
+    "predeploy": "yarn generate",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
