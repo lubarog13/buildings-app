@@ -7,6 +7,13 @@ export default defineNuxtConfig({
   image: {
     dir: 'assets/images',
   },
+  nitro: {
+    baseURL: "/buildings-app/",
+    prerender: {
+      crawlLinks: true,
+      failOnError: false, 
+    },
+  },
   fonts: {
     families: [
       {
