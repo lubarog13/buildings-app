@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   image: {
     dir: 'assets/images',
   },
+  routeRules: {
+    '/_ipx/**': { prerender: true },
+  },
   fonts: {
     families: [
       {
