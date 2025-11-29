@@ -15,7 +15,11 @@
         <div class="page-section__item item-picture">
             <h2 class="title-medium">6000</h2>
             <p class="small">Довольных семей в сданных объектах</p>
-            <div class="item-background"></div>
+            <div class="item-background">
+                <NuxtImg
+src="/family.png" format="webp" alt="Семейная фотография" placeholder
+                    class="item-background-image" width="100%" height="100%" loading="lazy" />
+            </div>
         </div>
         <div class="page-section__item item-light">
             <h2 class="title-small">Современные технологии</h2>
@@ -52,7 +56,7 @@ const { media } = mediaMixin();
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/_variables.scss';
+@use '@/assets/styles/_variables.scss' as *;
 
 .page-section {
     display: grid;
@@ -208,13 +212,23 @@ const { media } = mediaMixin();
             }
 
             .item-background {
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    clip-path: polygon(131px 0, 100% 0%, 100% 100%, 0% 100%);
+                    object-fit: cover;
+                }
                 &::before {
                     content: "";
                     display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     width: 100%;
                     height: 100%;
-                    background: linear-gradient(33.78deg, rgba(0, 0, 0, 0.4) 30.68%, rgba(0, 0, 0, 0) 56.38%) center center / cover,
-                        var(--white) url('@/assets/images/family.png') no-repeat center center / cover;
+                    z-index: 10;
+                    background: linear-gradient(33.78deg, rgba(0, 0, 0, 0.4) 30.68%, rgba(0, 0, 0, 0) 56.38%) center center / cover;
                     clip-path: polygon(131px 0, 100% 0%, 100% 100%, 0% 100%);
                 }
             }
@@ -321,6 +335,9 @@ const { media } = mediaMixin();
                 height: 195px;
 
                 .item-background {
+                    img {
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    }
                     &::before {
                         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
                     }
