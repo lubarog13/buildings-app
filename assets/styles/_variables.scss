@@ -1,0 +1,50 @@
+:root {
+    --text-primary: #1C1D21;
+    --white: #FFFFFF;
+    --secondary: #1C1D210F;
+    --secondary-text: #1C1D21CC;
+    --blue-icon: #93B2DB;
+    --main-gradient: radial-gradient(76.36% 212.87% at 87.43% 91.15%, #476D9F 0%, #93B2DB 55.72%);
+    --secondary-gradient: linear-gradient(143.27deg, #f5f7fb 3.11%, #d0dbeb 56.19%);
+    
+    --block-gradient: radial-gradient(71.66% 199.46% at 92.13% 90.12%, #2460B0 0%, #7CA9E6 98.77%);
+    --hover-color: #272AEB;
+    --border-color: #1C1D2126;
+    --navigation-background: #1C1D2166;
+    --navigation-border: #FFFFFF66;
+    --border-radius: 24px;
+    --border-radius-x-small: 8px;
+    --border-radius-small: 16px;
+    --border-radius-big: 32px;
+}
+
+$font-family: 'Inter', sans-serif;
+$font-family-tt-norms: 'TT Norms', sans-serif;
+$font-family-tt-travels-next-trial-medium: 'TT Travels Next Trial Medium', sans-serif;
+
+$font-size-extra-small: 8px;
+$font-size-small: 10px;
+$font-size-medium: 14px;
+$font-size: 16px;
+$font-size-large: 18px;
+$font-size-x-large: 20px;
+$font-size-x-large-2: 22px;
+$font-size-extra-large: 26px;
+$font-size-extra-large-2: 30px;
+$font-size-extra-large-3: 32px;
+$font-size-huge: 42px;
+
+@mixin media-breakpoint-down($media) {
+    @if $media == xs {
+      @media (max-width: 550px) {@content;}
+    }
+    @else if $media == sm {
+        @media (max-width: 767px) {@content;}
+    }
+    @else if $media == md {
+        @media (max-width: 1023px) {@content;}
+    }
+    @else if $media == lg {
+        @media (max-width: 1209px) {@content;}
+    }
+  }
