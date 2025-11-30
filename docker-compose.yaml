@@ -1,0 +1,9 @@
+version: '1.0'
+services:
+  buildings-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: buildings-app-container
+    ports:
+      - 8080:80

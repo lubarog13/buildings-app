@@ -1,8 +1,11 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const baseURL = process.env.BASE_URL || '/buildings-app/'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   app: {
-    baseURL: '/buildings-app/',
+    baseURL: baseURL,
   },
   devtools: { enabled: true },
   css: ['@/assets/styles/index.scss'],
